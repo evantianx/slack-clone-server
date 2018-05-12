@@ -31,6 +31,6 @@ app.use(
   })
 );
 
-models.sequelize.sync().then(() => {
+models.sequelize.sync({ force: true }).then(() => {
   app.listen(PORT);
 });

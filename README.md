@@ -115,3 +115,13 @@ postgres=# \c
 # 展示数据库所有 table
 postgres=# \d
 ```
+
+```js
+const sequelize = new Sequelize("slack", "postgres", "postgres", {
+  dialect: "postgres",
+  // camelcase 2 snakecase  eg. teamId --> team_id
+  define: {
+    underscored: true
+  }
+});
+```
