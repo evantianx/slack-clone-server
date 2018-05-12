@@ -5,8 +5,9 @@ import { makeExecutableSchema } from "graphql-tools";
 
 import typeDefs from "./schema";
 import resolvers from "./resolvers";
+import models from "./models";
 
-export const schema = makeExecutableSchema({
+const schema = makeExecutableSchema({
   typeDefs,
   resolvers
 });
@@ -30,4 +31,6 @@ app.use(
   })
 );
 
-app.listen(PORT);
+models.sequelize.sync().then(() => {
+  app.listen(PORT);
+});

@@ -88,3 +88,30 @@
       })
     );
     ```
+
+* [`Sequelize`](https://github.com/sequelize/sequelize)
+
+> Sequelize is a promise-based Node.js ORM for Postgres, MySQL, SQLite and Microsoft SQL Server. It features solid transaction support, relations, read replication and more.
+
+### database
+
+采用 PostgreSQL：
+
+```bash
+brew install postgresql
+```
+
+> 正常情况下，安装完成后，PostgreSQL 服务器会自动在本机的 5432 端口开启。
+
+```bash
+# 进入 PostgreSQL 命令行模式
+psql -d postgres
+# 创建数据库
+postgres=# create database slack;
+# 退出
+postgres=# \q
+# 连接数据库
+postgres=# \c
+# 展示数据库所有 table
+postgres=# \d
+```
