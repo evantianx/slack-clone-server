@@ -97,6 +97,10 @@
 
 > 合并某个文件夹下或者某几个文件所有 schema /resolvers
 
+* [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+
+> hash passwords
+
 ### database
 
 采用 PostgreSQL：
