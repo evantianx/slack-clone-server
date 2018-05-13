@@ -93,6 +93,10 @@
 
 > Sequelize is a promise-based Node.js ORM for Postgres, MySQL, SQLite and Microsoft SQL Server. It features solid transaction support, relations, read replication and more.
 
+* [merge-graphql-schemas](https://github.com/okgrow/merge-graphql-schemas)
+
+> 合并某个文件夹下或者某几个文件所有 schema /resolvers
+
 ### database
 
 采用 PostgreSQL：
