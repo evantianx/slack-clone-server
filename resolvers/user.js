@@ -1,4 +1,12 @@
 import bcrypt from "bcrypt";
+import _ from "lodash";
+
+const formatErrors = (e, models) => {
+  if (e instanceof models.sequelize.ValidationError) {
+    return e.errors.map(x => _.pick(x, ["path", "message"]));
+  }
+  return [{ path: "name", message: "something went wrong" }];
+};
 
 export default {
   Query: {
@@ -9,15 +17,31 @@ export default {
   Mutation: {
     register: async (parent, { password, ...otherArgs }, { models }) => {
       try {
+        if (password.length < 5 || password.length > 20) {
+          return {
+            ok: false,
+            errors: [
+              {
+                path: "password",
+                message: "The password needs to be between 5 and 20 characters"
+              }
+            ]
+          };
+        }
         const hashedPassword = await bcrypt.hash(password, 12);
-        await models.User.create({
+        const user = await models.User.create({
           ...otherArgs,
           password: hashedPassword
         });
-        return true;
+        return {
+          ok: true,
+          user
+        };
       } catch (err) {
-        console.log(err);
-        return false;
+        return {
+          ok: false,
+          errors: formatErrors(err, models)
+        };
       }
     }
   }
