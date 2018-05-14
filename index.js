@@ -12,6 +12,9 @@ const resolversArray = fileLoader(path.join(__dirname, "./resolvers"));
 const typeDefs = mergeTypes(typesArray, { all: true });
 const resolvers = mergeResolvers(resolversArray);
 
+const SECRET = "asdsadaslfdjsdfskjf";
+const SECRET2 = "asdasdasdfdfgsdgdfhjgh";
+
 const schema = makeExecutableSchema({
   typeDefs,
   resolvers
@@ -31,7 +34,9 @@ app.use(
       models,
       user: {
         id: 1
-      }
+      },
+      SECRET,
+      SECRET2
     }
   })
 );
