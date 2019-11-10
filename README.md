@@ -1,6 +1,6 @@
 ## slack-clone-server
 
-### 初始化配置
+### Initialize
 
 * eslint(airbnb)
 
@@ -41,7 +41,7 @@
   yarn add -D nodemon
   ```
 
-最后配置 `package.json` ：
+Then modify `package.json` ：
 
 ```js
 // ...
@@ -52,9 +52,9 @@
 // ...
 ```
 
-运行 `yarn start` 即可。
+Run `yarn start` 
 
-### 项目依赖
+### Dependencies
 
 * [`graphql-tools`](https://github.com/apollographql/graphql-tools)
 
