@@ -33,6 +33,6 @@
     "lodash": "^4.17.10",
     "merge-graphql-schemas": "^1.5.1",
     "pg": "^7.4.3",
-    "sequelize": "^4.37.7"
+    "sequelize": "^5.15.1"
   }
 }
